@@ -1,0 +1,1 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Inter:wght@400;600;700&display=swap');:root{--ring:#F47174}*{box-sizing:border-box}html,body{height:100%}body{font-family:Inter,system-ui,sans-serif;color:#1F2937;background:#fff}a:focus-visible,button:focus-visible{outline:3px solid var(--ring);outline-offset:2px}

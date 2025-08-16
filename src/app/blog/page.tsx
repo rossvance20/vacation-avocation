@@ -1,0 +1,1 @@
+export default function Blog(){ return (<main className="max-w-6xl mx-auto px-4 py-12"><h1 className="text-3xl font-semibold mb-6">Blog</h1><p className="opacity-70">No posts yet — connect your editor (Sanity) to start publishing.</p></main>) }
