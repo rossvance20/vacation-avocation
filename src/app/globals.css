@@ -1,13 +1,47 @@
+/* === globals.css === */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&family=Inter:wght@400;600&display=swap');
 
-:root{ --ring:#F47174 }
-*{ box-sizing:border-box }
-html,body{ height:100% }
-body{
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  color:#0f172a; background:#fff;
-  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+:root {
+  --primary-color: #F47174;
+  --dark-bg: #0f172a;
+  --text-dark: #0f172a;
+  --text-light: #ffffff;
+  --border-color: #e2e8f0;
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
 }
-h1,h2,h3{ font-family: Outfit, Inter, system-ui, sans-serif; letter-spacing:-0.01em }
-.container{ max-width:1120px; margin:0 auto; padding:0 1rem }
-a:focus-visible,button:focus-visible{ outline:3px solid var(--ring); outline-offset:2px }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background: var(--text-light);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
