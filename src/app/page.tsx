@@ -1,10 +1,9 @@
-// === page.tsx ===
+// src/app/page.tsx
 import Image from 'next/image'
 import Link from 'next/link'
+import WorldMap from '@/components/WorldMap'
 
-// You might need to import your WorldMap component if it's in a different location
-// import WorldMap from '@/components/WorldMap'
-
+// Reusable Component for Guide Cards
 const GuideCard = ({ title, href, imgSrc }: { title: string, href: string, imgSrc: string }) => (
   <Link href={href} className="group block rounded-2xl overflow-hidden border border-[var(--border-color)] hover:shadow-lg transition-all duration-300">
     <div className="relative aspect-[4/3] overflow-hidden">
@@ -16,12 +15,12 @@ const GuideCard = ({ title, href, imgSrc }: { title: string, href: string, imgSr
   </Link>
 );
 
+// Reusable Component for Continent Links
 const ContinentLink = ({ title, href }: { title: string, href: string }) => (
   <Link href={href} className="block rounded-2xl border border-[var(--border-color)] p-6 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
     <span className="text-xl font-semibold">{title}</span>
   </Link>
 );
-
 
 export default function Home() {
   return (
@@ -57,8 +56,7 @@ export default function Home() {
         <div className="rounded-2xl border border-[var(--border-color)] p-6 md:p-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Explore by map</h2>
           <div className="bg-slate-100 rounded-lg min-h-[300px] flex items-center justify-center">
-            {/* <WorldMap /> goes here. This is a placeholder for your component. */}
-            <p className="text-slate-500">Interactive World Map</p>
+            <WorldMap />
           </div>
         </div>
       </section>
