@@ -1,24 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&family=Inter:wght@400;600&display=swap');
 
 :root{ --ring:#F47174 }
 *{ box-sizing:border-box }
 html,body{ height:100% }
 body{
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  color:#0f172a;
-  background:#ffffff;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color:#0f172a; background:#fff;
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
 }
-
-h1,h2,h3,.display{ font-family: Outfit, Inter, system-ui, sans-serif; letter-spacing:-0.01em; }
+h1,h2,h3{ font-family: Outfit, Inter, system-ui, sans-serif; letter-spacing:-0.01em }
+.container{ max-width:1120px; margin:0 auto; padding:0 1rem }
 a:focus-visible,button:focus-visible{ outline:3px solid var(--ring); outline-offset:2px }
-
-/* helpers */
-.container{ max-width:1120px; margin:0 auto; padding:0 1rem; }
-.card{ border:1px solid rgba(2,6,23,0.08); border-radius:16px; box-shadow:0 10px 30px rgba(2,6,23,0.06); background:#fff; }
-.btn{ display:inline-flex; align-items:center; gap:.5rem; padding:.8rem 1.1rem; border-radius:12px; font-weight:600; transition:.2s ease; }
-.btn-primary{ background:#F47174; color:#fff; }
-.btn-primary:hover{ transform: translateY(-1px); box-shadow:0 8px 20px rgba(244,113,116,.35) }
-.btn-ghost{ border:1px solid rgba(2,6,23,0.12); background:#fff }
-.btn-ghost:hover{ background:#f8fafc }
