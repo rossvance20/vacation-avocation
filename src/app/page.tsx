@@ -5,8 +5,8 @@ import WorldMap from '@/components/WorldMap'
 export default function Home() {
   return (
     <main>
-      {/* HERO — banner height, not full screen */}
-      <section className="relative w-full h-[10vh] min-h-[420px] flex items-center justify-center text-center overflow-hidden">
+      {/* HERO — fixed banner height */}
+      <section className="relative w-full h-[300px] md:h-[400px] flex items-center justify-center text-center overflow-hidden">
         {/* Background image */}
         <Image
           src="/hero.jpg"
@@ -15,38 +15,38 @@ export default function Home() {
           priority
           className="object-cover"
         />
-        {/* Soft dark overlay for text contrast */}
+        {/* Soft overlay for text contrast */}
         <div className="absolute inset-0 bg-black/35" />
 
-        {/* Foreground content */}
+        {/* Foreground content (kept compact) */}
         <div className="relative z-10 text-white px-4">
           <div className="flex justify-center">
             <Image
               src="/avocado-plane.png"
               alt="Vacation Avocation icon"
-              width={84}
-              height={84}
-              className="mb-4"
+              width={60}
+              height={60}
+              className="mb-3"
             />
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-semibold">
+          <h1 className="text-3xl md:text-4xl font-semibold leading-tight">
             Food-first, joy-forward travel.
           </h1>
-          <p className="mt-4 text-lg md:text-xl opacity-90">
+          <p className="mt-2 text-base md:text-lg opacity-90">
             Tight itineraries, cheeky vibes, hidden eats — all killer, no filler.
           </p>
 
-          <div className="mt-8 flex items-center justify-center gap-4">
+          <div className="mt-5 flex items-center justify-center gap-3">
             <Link
               href="/guides"
-              className="inline-flex px-5 py-3 rounded-xl bg-[#F47174] text-white font-semibold"
+              className="inline-flex px-4 py-2 rounded-lg bg-[#F47174] text-white font-semibold"
             >
-              Discover Food-First Guides
+              Discover Guides
             </Link>
             <Link
               href="/guides"
-              className="inline-flex px-5 py-3 rounded-xl bg-white/90 text-slate-900 font-semibold"
+              className="inline-flex px-4 py-2 rounded-lg bg-white/90 text-slate-900 font-semibold"
             >
               Explore by Map
             </Link>
@@ -55,7 +55,7 @@ export default function Home() {
       </section>
 
       {/* “Start with these” — placeholder cards (swap with real posts later) */}
-      <section className="container mx-auto py-12">
+      <section className="container mx-auto py-10">
         <h2 className="text-2xl font-semibold mb-4">Start with these</h2>
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
           {[
@@ -78,7 +78,7 @@ export default function Home() {
       </section>
 
       {/* Map section */}
-      <section className="container mx-auto py-12">
+      <section className="container mx-auto py-10">
         <div className="rounded-2xl border border-slate-200 p-6">
           <h2 className="text-2xl font-semibold mb-3">Explore by map</h2>
           <WorldMap />
