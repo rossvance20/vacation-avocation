@@ -1,6 +1,40 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import WorldMap from '@/components/WorldMap'
+
 export default function Home(){
-  return (<main><section className="bg-gradient-to-tr from-avocado to-plane text-white"><div className="max-w-6xl mx-auto px-4 py-20 text-center"><div className="flex justify-center"><Image src="/avocado-plane.png" alt="Avocado plane" width={90} height={90}/></div><h1 className="font-display text-4xl md:text-5xl mt-4">Your gateway to food-first, joy-forward travel.</h1><p className="mt-3 text-lg opacity-90">Tight itineraries, cheeky vibes, hidden eats — all killer, no filler.</p><div className="mt-6"><Link href="/guides" className="inline-block bg-coral text-white px-6 py-3 rounded-xl2 font-semibold">Start Exploring</Link></div></div></section><section className="max-w-6xl mx-auto px-4 py-12"><h2 className="text-2xl font-semibold mb-4">Explore by map</h2><WorldMap/></section></main>)
+  return (
+    <main>
+      {/* Hero */}
+      <section
+        className="relative overflow-hidden"
+        style={{
+          background:
+            'radial-gradient(1200px 600px at 80% -50%, #fde2e4 0%, rgba(255,255,255,0) 60%), radial-gradient(900px 500px at -20% 10%, #d1fae5 0%, rgba(255,255,255,0) 50%)'
+        }}
+      >
+        <div className="container py-20 text-center">
+          <div className="flex justify-center">
+            <Image src="/avocado-plane.png" alt="Avocado plane" width={96} height={96} />
+          </div>
+          <h1 className="display text-5xl md:text-6xl mt-5">Food-first, joy-forward travel.</h1>
+          <p className="mt-4 text-lg text-slate-600">
+            Tight itineraries, cheeky vibes, hidden eats — all killer, no filler.
+          </p>
+          <div className="mt-8 flex items-center justify-center gap-4">
+            <Link href="/guides" className="btn btn-primary">Start exploring</Link>
+            <Link href="/subscribe" className="btn btn-ghost">Get updates</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Map + guides CTA */}
+      <section className="container py-12">
+        <div className="card p-6">
+          <h2 className="text-2xl font-semibold mb-3">Explore by map</h2>
+          <WorldMap />
+        </div>
+      </section>
+    </main>
+  )
 }
