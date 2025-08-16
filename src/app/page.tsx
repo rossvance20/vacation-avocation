@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main>
       {/* HERO — banner height, not full screen */}
-      <section className="relative w-full h-[30vh] min-h-[420px] flex items-center justify-center text-center overflow-hidden">
+      <section className="relative w-full h-[10vh] min-h-[420px] flex items-center justify-center text-center overflow-hidden">
         {/* Background image */}
         <Image
           src="/hero.jpg"
