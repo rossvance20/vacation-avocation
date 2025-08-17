@@ -5,7 +5,7 @@ import TagChip from './TagChip'
 import GuideCard from './GuideCard'
 import type { Post } from '@/lib/posts'
 
-const themes = ['All', 'London', 'Weekend Trips', 'Food Spots', 'Itineraries', 'Coffee', 'Budget', 'Luxury']
+const themes = ['All', 'UK', 'International', 'Restaurants', 'Third-wave Coffee', 'Bakeries', 'Cupcakes', 'Butchers']
 
 export default function LatestPosts({ posts }: { posts: Post[] }) {
   const [active, setActive] = useState('All')
