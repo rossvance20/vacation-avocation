@@ -4,13 +4,24 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
-const links = [
+type NavLink = {
+  href?: string
+  label: string
+  children?: NavLink[]
+}
+
+const links: NavLink[] = [
+  { href: '/about', label: 'About Us' },
   { href: '/destinations', label: 'Destinations' },
-  { href: '/food-guides', label: 'Food Guides' },
-  { href: '/london', label: 'London' },
-  { href: '/itineraries', label: 'Itineraries' },
-  { href: '/tips', label: 'Tips' },
-  { href: '/about', label: 'About' },
+  { href: '/restaurants', label: 'Restaurants' },
+  {
+    label: 'Key Travel Resources',
+    children: [
+      { href: '/travel-resources', label: 'Travel Resources' },
+      { href: '/travel-reward-credit-cards', label: 'Travel Reward Credit Cards' },
+      { href: '/travel-gear', label: 'Travel Gear' },
+    ],
+  },
 ]
 
 export default function Header() {
@@ -19,20 +30,31 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-paper/80 backdrop-blur border-b border-slate-200">
       <div className="container flex items-center justify-between h-16">
         <Link href="/" className="flex items-center">
-          <Image
-            src="https://placehold.co/160x40?text=VA"
-            alt="Vacation Avocation"
-            width={160}
-            height={40}
-            priority
-          />
+          <Image src="/logo-text.svg" alt="Vacation Avocation" width={200} height={50} priority />
         </Link>
         <nav className="hidden md:flex items-center gap-6 font-heading text-sm">
-          {links.map((l) => (
-            <Link key={l.href} href={l.href} className="hover:text-brand">
-              {l.label}
-            </Link>
-          ))}
+          {links.map((l) =>
+            l.children ? (
+              <div key={l.label} className="relative group">
+                <span className="hover:text-brand cursor-pointer">{l.label}</span>
+                <div className="absolute left-0 mt-2 hidden group-hover:block bg-paper border border-slate-200 rounded shadow-card">
+                  <ul className="py-2">
+                    {l.children.map((c) => (
+                      <li key={c.href}>
+                        <Link href={c.href!} className="block px-4 py-2 whitespace-nowrap hover:bg-paper/50">
+                          {c.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ) : (
+              <Link key={l.href} href={l.href!} className="hover:text-brand">
+                {l.label}
+              </Link>
+            )
+          )}
           <Link href="/search" aria-label="Search" className="hover:text-brand">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -71,14 +93,25 @@ export default function Header() {
         <nav className="md:hidden border-t border-slate-200 bg-paper">
           <ul className="flex flex-col px-4 py-4 space-y-4">
             {links.map((l) => (
-              <li key={l.href}>
-                <Link
-                  href={l.href}
-                  className="block"
-                  onClick={() => setOpen(false)}
-                >
-                  {l.label}
-                </Link>
+              <li key={l.label}>
+                {l.children ? (
+                  <>
+                    <span className="block font-semibold">{l.label}</span>
+                    <ul className="pl-4 mt-2 space-y-2">
+                      {l.children.map((c) => (
+                        <li key={c.href}>
+                          <Link href={c.href!} className="block" onClick={() => setOpen(false)}>
+                            {c.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ) : (
+                  <Link href={l.href!} className="block" onClick={() => setOpen(false)}>
+                    {l.label}
+                  </Link>
+                )}
               </li>
             ))}
             <li>

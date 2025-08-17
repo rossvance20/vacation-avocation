@@ -1,1 +1,22 @@
-export default function About(){ return (<main className="max-w-3xl mx-auto px-4 py-12 prose"><h1>About Vacation Avocation</h1><p>We believe travel should be fun, a little cheeky, and always memorable. Combining a love for food and wanderlust, we guide you through vibrant cities and peaceful escapes.</p><h2>What you’ll find here</h2><ul><li>Food-first guides</li><li>Itineraries you can actually follow</li><li>Hidden spots and honest reviews</li></ul></main>) }
+import Image from 'next/image'
+
+export default function About() {
+  return (
+    <main className="max-w-3xl mx-auto px-4 py-12 prose">
+      <h1 className="flex items-center gap-2">
+        About Vacation Avocation
+        <Image src="/logo.svg" alt="" width={50} height={25} className="-rotate-12" />
+      </h1>
+      <p>
+        We believe travel should be fun, a little cheeky, and always memorable. Combining a love for food and wanderlust, we
+        guide you through vibrant cities and peaceful escapes.
+      </p>
+      <h2>What you’ll find here</h2>
+      <ul>
+        <li>Food-first guides</li>
+        <li>Itineraries you can actually follow</li>
+        <li>Hidden spots and honest reviews</li>
+      </ul>
+    </main>
+  )
+}
