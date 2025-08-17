@@ -1,0 +1,1 @@
+export default function Work(){ return (<main className="max-w-3xl mx-auto px-4 py-12 prose"><h1>Work With Us</h1><p>We occasionally collaborate on campaigns, sponsored content, or partnerships that fit our vibe. Drop us a line if you want to team up.</p></main>) }
