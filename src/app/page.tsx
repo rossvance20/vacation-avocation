@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: 'Vacation Avocation',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80',
+        url: 'https://vacationavocation.com/home-hero.svg',
         width: 1200,
         height: 630,
         alt: 'Vacation Avocation',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Vacation Avocation | Fun food & travel guides',
     description: 'Tight itineraries, cheeky vibes, hidden eats — all killer, no filler.',
-    images: ['https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80'],
+    images: ['https://vacationavocation.com/home-hero.svg'],
   },
 }
 
@@ -37,7 +37,7 @@ export default function Home() {
   return (
     <main>
       <section className="relative h-[45vh] md:h-[60vh]">
-        <Image src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80" alt="Beach vacation" fill className="object-cover" priority />
+        <Image src="/home-hero.svg" alt="Cliffside illustration" fill className="object-cover" priority />
         <div className="absolute inset-0 bg-ink/40" />
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-paper space-y-4 px-4">
 
