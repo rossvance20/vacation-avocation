@@ -49,7 +49,10 @@ export default function Header() {
                   <ul className="py-2">
                     {l.children.map((c) => (
                       <li key={c.href}>
-                        <Link href={c.href!} className="block px-4 py-2 whitespace-nowrap hover:bg-paper/50">
+                        <Link
+                          href={c.href!}
+                          className="block px-4 py-2 whitespace-nowrap hover:bg-paper/50 hover:text-brand"
+                        >
                           {c.label}
                         </Link>
                       </li>
@@ -108,7 +111,11 @@ export default function Header() {
                     <ul className="pl-4 mt-2 space-y-2">
                       {l.children.map((c) => (
                         <li key={c.href}>
-                          <Link href={c.href!} className="block" onClick={() => setOpen(false)}>
+                          <Link
+                            href={c.href!}
+                            className="block hover:text-brand"
+                            onClick={() => setOpen(false)}
+                          >
                             {c.label}
                           </Link>
                         </li>
@@ -116,14 +123,22 @@ export default function Header() {
                     </ul>
                   </>
                 ) : (
-                  <Link href={l.href!} className="block" onClick={() => setOpen(false)}>
+                  <Link
+                    href={l.href!}
+                    className="block hover:text-brand"
+                    onClick={() => setOpen(false)}
+                  >
                     {l.label}
                   </Link>
                 )}
               </li>
             ))}
             <li>
-              <Link href="/search" className="block" onClick={() => setOpen(false)}>
+              <Link
+                href="/search"
+                className="block hover:text-brand"
+                onClick={() => setOpen(false)}
+              >
                 Search
               </Link>
             </li>
