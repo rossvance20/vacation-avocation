@@ -10,9 +10,21 @@ export default function Home() {
         <h2 className="text-2xl font-semibold mb-4">Start with these</h2>
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
           {[
-            { title: '48 Hours in London (Food Edition)', href: '/guides/europe', img: '/hero.jpg' },
-            { title: 'Rome Coffee & Cannoli Walk', href: '/guides/europe', img: '/hero.jpg' },
-            { title: 'Cape Town Bites in a Day', href: '/guides/africa', img: '/hero.jpg' },
+            {
+              title: '48 Hours in London (Food Edition)',
+              href: '/guides/europe',
+              img: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=400&h=300&q=80',
+            },
+            {
+              title: 'Rome Coffee & Cannoli Walk',
+              href: '/guides/europe',
+              img: 'https://images.unsplash.com/photo-1551024709-8f23befc6cf9?auto=format&fit=crop&w=400&h=300&q=80',
+            },
+            {
+              title: 'Cape Town Bites in a Day',
+              href: '/guides/africa',
+              img: 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=400&h=300&q=80',
+            },
           ].map((c, i) => (
             <Link
               key={i}
