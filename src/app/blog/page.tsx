@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     siteName: 'Vacation Avocation',
     images: [
       {
-        url: '/hero.jpg',
+        url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80',
         width: 1200,
         height: 630,
         alt: 'Vacation Avocation',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Blog | Vacation Avocation',
     description: 'Stories and tips from our food-first adventures.',
-    images: ['/hero.jpg'],
+    images: ['https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80'],
   },
 }
 

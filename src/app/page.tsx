@@ -1,22 +1,23 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import WorldMap from '@/components/WorldMap'
+import GuideCard from '@/components/GuideCard'
+import LatestPosts from '@/components/LatestPosts'
+import NewsletterForm from '@/components/NewsletterForm'
+import { posts } from '@/lib/posts'
 
 export const metadata: Metadata = {
-  title: 'Vacation Avocation | Food-first travel guides',
-  description:
-    'Tight itineraries, cheeky vibes, hidden eats — all killer, no filler.',
+  title: 'Vacation Avocation | Fun food & travel guides',
+  description: 'Tight itineraries, cheeky vibes, hidden eats — all killer, no filler.',
   alternates: { canonical: 'https://vacationavocation.com/' },
   openGraph: {
-    title: 'Vacation Avocation | Food-first travel guides',
-    description:
-      'Tight itineraries, cheeky vibes, hidden eats — all killer, no filler.',
+    title: 'Vacation Avocation | Fun food & travel guides',
+    description: 'Tight itineraries, cheeky vibes, hidden eats — all killer, no filler.',
     url: 'https://vacationavocation.com/',
     siteName: 'Vacation Avocation',
     images: [
       {
-        url: '/hero.jpg',
+        url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80',
         width: 1200,
         height: 630,
         alt: 'Vacation Avocation',
@@ -25,78 +26,51 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Vacation Avocation | Food-first travel guides',
-    description:
-      'Tight itineraries, cheeky vibes, hidden eats — all killer, no filler.',
-    images: ['/hero.jpg'],
+    title: 'Vacation Avocation | Fun food & travel guides',
+    description: 'Tight itineraries, cheeky vibes, hidden eats — all killer, no filler.',
+    images: ['https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80'],
   },
 }
 
 export default function Home() {
+  const featured = posts.slice(0, 6)
   return (
     <main>
-      {/* “Start with these” — placeholder cards (swap with real posts later) */}
-      <section className="container mx-auto py-10">
-        <h2 className="text-2xl font-semibold mb-4">Start with these</h2>
-        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-          {[
-            {
-              title: '48 Hours in London (Food Edition)',
-              href: '/guides/europe',
-              img: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=400&h=300&q=80',
-            },
-            {
-              title: 'Rome Coffee & Cannoli Walk',
-              href: '/guides/europe',
-              img: 'https://images.unsplash.com/photo-1551024709-8f23befc6cf9?auto=format&fit=crop&w=400&h=300&q=80',
-            },
-            {
-              title: 'Cape Town Bites in a Day',
-              href: '/guides/africa',
-              img: 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=400&h=300&q=80',
-            },
-          ].map((c, i) => (
-            <Link
-              key={i}
-              href={c.href}
-              className="rounded-2xl overflow-hidden border border-slate-200 hover:shadow-md transition"
-            >
-              <div className="relative aspect-[4/3]">
-                <Image src={c.img} alt={c.title} fill className="object-cover" loading="lazy" />
-              </div>
-              <div className="p-4 font-semibold">{c.title}</div>
+      <section className="relative h-[45vh] md:h-[60vh]">
+        <Image src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80" alt="Beach vacation" fill className="object-cover" priority />
+        <div className="absolute inset-0 bg-ink/40" />
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-paper space-y-4 px-4">
+          <h1 className="text-4xl md:text-6xl font-heading">Vacation Avocation</h1>
+          <p className="text-lg md:text-xl">Fun food & travel guides.</p>
+          <div className="flex gap-4 flex-wrap justify-center">
+            <Link href="/london" className="px-6 py-3 rounded-xl bg-brand text-white font-semibold hover:bg-brand/90">
+              Start with London
             </Link>
+            <Link href="/guides" className="px-6 py-3 rounded-xl bg-accent1 text-white font-semibold hover:bg-accent1/90">
+              All Guides
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="container py-12 space-y-8">
+        <h2 className="text-3xl font-heading">Featured Guides</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+          {featured.map((p) => (
+            <GuideCard key={p.href} {...p} />
           ))}
         </div>
       </section>
 
-      {/* Map section */}
-      <section className="container mx-auto py-10">
-        <div className="rounded-2xl border border-slate-200 p-6">
-          <h2 className="text-2xl font-semibold mb-3">Explore by map</h2>
-          <WorldMap />
-        </div>
-      </section>
+      <LatestPosts posts={posts} />
 
-      {/* Continent shortcuts */}
-      <section className="container mx-auto pb-16">
-        <h2 className="text-2xl font-semibold mb-4">Browse by continent</h2>
-        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-          {[
-            { title: 'Africa', href: '/guides/africa' },
-            { title: 'Europe', href: '/guides/europe' },
-            { title: 'Asia', href: '/guides/asia' },
-          ].map((c, i) => (
-            <Link
-              key={i}
-              href={c.href}
-              className="rounded-2xl border border-slate-200 p-6 hover:shadow-md transition"
-            >
-              <span className="font-semibold">{c.title}</span>
-            </Link>
-          ))}
+      <section className="bg-accent2/20 py-12">
+        <div className="container space-y-4 text-center">
+          <h2 className="text-2xl font-heading">Get fresh guides in your inbox</h2>
+          <NewsletterForm />
         </div>
       </section>
-    </main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({"@context":"https://schema.org","@type":"Article","headline": posts[0].title,"image": posts[0].image,"author":{"@type":"Person","name":"Vacation Avocation"},"publisher":{"@type":"Organization","name":"Vacation Avocation"}})}} />
+</main>
   )
 }
