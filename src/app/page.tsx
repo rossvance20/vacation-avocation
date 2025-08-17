@@ -1,6 +1,36 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import WorldMap from '@/components/WorldMap'
+
+export const metadata: Metadata = {
+  title: 'Vacation Avocation | Food-first travel guides',
+  description:
+    'Tight itineraries, cheeky vibes, hidden eats — all killer, no filler.',
+  alternates: { canonical: 'https://vacationavocation.com/' },
+  openGraph: {
+    title: 'Vacation Avocation | Food-first travel guides',
+    description:
+      'Tight itineraries, cheeky vibes, hidden eats — all killer, no filler.',
+    url: 'https://vacationavocation.com/',
+    siteName: 'Vacation Avocation',
+    images: [
+      {
+        url: '/hero.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Vacation Avocation',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Vacation Avocation | Food-first travel guides',
+    description:
+      'Tight itineraries, cheeky vibes, hidden eats — all killer, no filler.',
+    images: ['/hero.jpg'],
+  },
+}
 
 export default function Home() {
   return (
