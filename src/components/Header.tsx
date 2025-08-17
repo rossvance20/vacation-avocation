@@ -12,7 +12,15 @@ type NavLink = {
 
 const links: NavLink[] = [
   { href: '/about', label: 'About Us' },
-  { href: '/destinations', label: 'Destinations' },
+  {
+    label: 'Destinations',
+    children: [
+      { href: '/destinations/africa', label: 'Africa' },
+      { href: '/destinations/asia', label: 'Asia' },
+      { href: '/destinations/north-america', label: 'North America' },
+      { href: '/destinations/south-america', label: 'South America' },
+    ],
+  },
   { href: '/restaurants', label: 'Restaurants' },
   {
     label: 'Key Travel Resources',
@@ -37,7 +45,7 @@ export default function Header() {
             l.children ? (
               <div key={l.label} className="relative group">
                 <span className="hover:text-brand cursor-pointer">{l.label}</span>
-                <div className="absolute left-0 mt-2 hidden group-hover:block bg-paper border border-slate-200 rounded shadow-card">
+                <div className="absolute left-0 top-full hidden group-hover:block bg-paper border border-slate-200 rounded shadow-card">
                   <ul className="py-2">
                     {l.children.map((c) => (
                       <li key={c.href}>
