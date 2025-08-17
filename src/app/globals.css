@@ -1,13 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&family=Inter:wght@400;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root{ --ring:#F47174 }
-*{ box-sizing:border-box }
-html,body{ height:100% }
-body{
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  color:#0f172a; background:#fff;
-  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+:root {
+  --brand: #16A34A;
+  --accent1: #1D4ED8;
+  --accent2: #F59E0B;
+  --ink: #0B1220;
+  --paper: #F8FAFC;
+  --ring: var(--accent1);
 }
-h1,h2,h3{ font-family: Outfit, Inter, system-ui, sans-serif; letter-spacing:-0.01em }
-.container{ max-width:1120px; margin:0 auto; padding:0 1rem }
-a:focus-visible,button:focus-visible{ outline:3px solid var(--ring); outline-offset:2px }
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  @apply font-body text-base text-ink bg-paper antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-heading font-semibold text-ink;
+}
+
+.container {
+  @apply max-w-7xl mx-auto px-4;
+}
+
+a:focus-visible, button:focus-visible {
+  @apply outline-none ring-2 ring-offset-2 ring-accent1;
+}
