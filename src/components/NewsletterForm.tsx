@@ -1,11 +1,20 @@
 'use client'
 
+import Image from 'next/image'
+
 export default function NewsletterForm() {
   return (
     <form
-      className="w-full flex flex-col sm:flex-row gap-4"
+      className="w-full flex flex-col sm:flex-row gap-4 items-center"
       onSubmit={(e) => e.preventDefault()}
     >
+      <Image
+        src="/logo.svg"
+        alt="Vacation Avocation"
+        width={60}
+        height={40}
+        className="mb-2 sm:mb-0"
+      />
       <label htmlFor="email" className="sr-only">
         Email address
       </label>

@@ -1,4 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <path d="M32 0C14 0 0 20 0 32s14 32 32 32 32-14 32-32S50 0 32 0z" fill="#6B8E23"/>
-  <circle cx="32" cy="36" r="14" fill="#8B5E3C"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80">
+  <!-- airplane body -->
+  <path d="M5 40 L75 40 L90 30 L110 30 L95 40 L110 50 L90 50 L75 40 L5 40 Z" fill="#FACC15" stroke="#365314" stroke-width="2"/>
+  <!-- avocado -->
+  <ellipse cx="40" cy="30" rx="15" ry="20" fill="#65a30d" stroke="#365314" stroke-width="2"/>
+  <circle cx="40" cy="37" r="8" fill="#8B5E3C"/>
+  <!-- face -->
+  <circle cx="35" cy="25" r="2" fill="#000"/>
+  <circle cx="45" cy="25" r="2" fill="#000"/>
+  <path d="M35 29 Q40 33 45 29" stroke="#000" stroke-width="1.5" fill="none" stroke-linecap="round"/>
 </svg>
