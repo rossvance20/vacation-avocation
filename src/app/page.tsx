@@ -5,63 +5,26 @@ import WorldMap from '@/components/WorldMap'
 export default function Home() {
   return (
     <main>
-      {/* HERO — fixed banner height */}
-      <section className="relative w-full h-[300px] md:h-[400px] flex items-center justify-center text-center overflow-hidden">
-        {/* Background image */}
-        <Image
-          src="/hero.jpg"
-          alt="Street food at night with city lights"
-          fill
-          priority
-          className="object-cover"
-        />
-        {/* Soft overlay for text contrast */}
-        <div className="absolute inset-0 bg-black/35" />
-
-        {/* Foreground content (kept compact) */}
-        <div className="relative z-10 text-white px-4">
-          <div className="flex justify-center">
-            <Image
-              src="/avocado-plane.png"
-              alt="Vacation Avocation icon"
-              width={60}
-              height={60}
-              className="mb-3"
-            />
-          </div>
-
-          <h1 className="text-3xl md:text-4xl font-semibold leading-tight">
-            Food-first, joy-forward travel.
-          </h1>
-          <p className="mt-2 text-base md:text-lg opacity-90">
-            Tight itineraries, cheeky vibes, hidden eats — all killer, no filler.
-          </p>
-
-          <div className="mt-5 flex items-center justify-center gap-3">
-            <Link
-              href="/guides"
-              className="inline-flex px-4 py-2 rounded-lg bg-[#F47174] text-white font-semibold"
-            >
-              Discover Guides
-            </Link>
-            <Link
-              href="/guides"
-              className="inline-flex px-4 py-2 rounded-lg bg-white/90 text-slate-900 font-semibold"
-            >
-              Explore by Map
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* “Start with these” — placeholder cards (swap with real posts later) */}
       <section className="container mx-auto py-10">
         <h2 className="text-2xl font-semibold mb-4">Start with these</h2>
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
           {[
-            { title: '48 Hours in London (Food Edition)', href: '/guides/europe', img: '/hero.jpg' },
-            { title: 'Rome Coffee & Cannoli Walk', href: '/guides/europe', img: '/hero.jpg' },
-            { title: 'Cape Town Bites in a Day', href: '/guides/africa', img: '/hero.jpg' },
+            {
+              title: '48 Hours in London (Food Edition)',
+              href: '/guides/europe',
+              img: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=400&h=300&q=80',
+            },
+            {
+              title: 'Rome Coffee & Cannoli Walk',
+              href: '/guides/europe',
+              img: 'https://images.unsplash.com/photo-1551024709-8f23befc6cf9?auto=format&fit=crop&w=400&h=300&q=80',
+            },
+            {
+              title: 'Cape Town Bites in a Day',
+              href: '/guides/africa',
+              img: 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=400&h=300&q=80',
+            },
           ].map((c, i) => (
             <Link
               key={i}
