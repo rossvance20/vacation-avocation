@@ -14,7 +14,7 @@ export default function Footer() {
   return (
     <footer className="mt-24 bg-ink text-paper">
       <div className="container py-16 space-y-6 text-center">
-        <Image src="/logo.svg" alt="Avocado plane" width={100} height={50} className="mx-auto rotate-6" />
+          <Image src="/logo.svg" alt="Avocado plane icon" width={100} height={50} className="mx-auto rotate-6" />
         <p className="text-lg font-heading">Fun food & travel guides.</p>
         <p className="max-w-prose mx-auto text-sm">
           Vacation Avocation helps you find the tastiest bites and brightest trips. Follow along for cheeky itineraries and bold flavours.

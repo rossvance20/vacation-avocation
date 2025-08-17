@@ -56,9 +56,9 @@ export default function Home() {
 
       <section className="container py-12 space-y-8">
         <h2 className="text-3xl font-heading flex items-center gap-2">
-          <Image src="/logo.svg" alt="" width={40} height={20} className="rotate-12" />
+          <Image src="/logo.svg" alt="Avocado plane icon" width={40} height={20} className="rotate-12" />
           Featured Guides
-          <Image src="/logo.svg" alt="" width={40} height={20} className="-rotate-12" />
+          <Image src="/logo.svg" alt="Avocado plane icon" width={40} height={20} className="-rotate-12" />
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
           {featured.map((p) => (
@@ -72,9 +72,9 @@ export default function Home() {
       <section className="bg-accent2/20 py-12">
         <div className="container space-y-4 text-center">
           <h2 className="text-2xl font-heading flex items-center justify-center gap-2">
-            <Image src="/logo.svg" alt="" width={40} height={20} className="-rotate-12" />
+            <Image src="/logo.svg" alt="Avocado plane icon" width={40} height={20} className="-rotate-12" />
             Get fresh guides in your inbox
-            <Image src="/logo.svg" alt="" width={40} height={20} className="rotate-12" />
+            <Image src="/logo.svg" alt="Avocado plane icon" width={40} height={20} className="rotate-12" />
           </h2>
           <NewsletterForm />
         </div>
