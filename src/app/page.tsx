@@ -40,8 +40,10 @@ export default function Home() {
         <Image src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80" alt="Beach vacation" fill className="object-cover" priority />
         <div className="absolute inset-0 bg-ink/40" />
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-paper space-y-4 px-4">
+
           <Image src="/logo-text.svg" alt="Vacation Avocation" width={240} height={60} className="-rotate-6" />
           <h1 className="sr-only">Vacation Avocation</h1>
+
           <p className="text-lg md:text-xl">Fun food & travel guides.</p>
           <div className="flex gap-4 flex-wrap justify-center">
             <Link href="/london" className="px-6 py-3 rounded-xl bg-brand text-white font-semibold hover:bg-brand/90">
