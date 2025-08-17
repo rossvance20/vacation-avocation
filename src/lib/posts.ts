@@ -70,4 +70,25 @@ export const posts: Post[] = [
     image: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80',
     href: '/guides/bangkok-street-food',
   },
+  {
+    title: "Portland's Best Bakeries",
+    tag: 'Bakeries',
+    excerpt: 'Sourdough, sweets, and everything in between.',
+    image: 'https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?auto=format&fit=crop&w=800&q=80',
+    href: '/guides/portland-bakeries',
+  },
+  {
+    title: 'NYC Cupcake Crawl',
+    tag: 'Cupcakes',
+    excerpt: 'Frosting-filled adventures in the Big Apple.',
+    image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=800&q=80',
+    href: '/guides/nyc-cupcakes',
+  },
+  {
+    title: "London's Top Butcher Shops",
+    tag: 'Butchers',
+    excerpt: 'Prime cuts from classic to contemporary.',
+    image: 'https://images.unsplash.com/photo-1559054867-95a01294f7f4?auto=format&fit=crop&w=800&q=80',
+    href: '/guides/london-butchers',
+  },
 ]

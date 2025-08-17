@@ -6,11 +6,11 @@ import TagChip from './TagChip'
 import GuideCard from './GuideCard'
 import type { Post } from '@/lib/posts'
 
-const themes = ['All', 'UK', 'International', 'Restaurants', 'Third-wave Coffee', 'Bakeries', 'Cupcakes', 'Butchers']
+const themes = ['UK', 'International', 'Restaurants', 'Third-wave Coffee', 'Bakeries', 'Cupcakes', 'Butchers']
 
 export default function LatestPosts({ posts }: { posts: Post[] }) {
-  const [active, setActive] = useState('All')
-  const filtered = active === 'All' ? posts : posts.filter((p) => p.tag === active)
+  const [active, setActive] = useState('UK')
+  const filtered = posts.filter((p) => p.tag === active)
   return (
     <section className="container py-12 space-y-6">
       <h2 className="text-2xl font-heading flex items-center gap-2">
