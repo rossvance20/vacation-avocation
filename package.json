@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "studio": "sanity dev --cwd sanity"
+    "studio": "sanity dev --cwd sanity",
+    "test": "echo \"No tests specified\""
   },
   "dependencies": {
     "@portabletext/react": "^3.0.11",
