@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = { title: 'Travel Reward Credit Cards - Vacation Avocation' }
@@ -5,7 +6,9 @@ export const metadata: Metadata = { title: 'Travel Reward Credit Cards - Vacatio
 export default function TravelRewardCreditCards() {
   return (
     <main className="container py-12 prose">
-      <h1>Travel Reward Credit Cards</h1>
+        <h1 className="flex items-center gap-2">Travel Reward Credit Cards
+          <Image src="/logo.svg" alt="Avocado plane icon" width={50} height={25} className="rotate-12" />
+        </h1>
       <p>Content coming soon.</p>
     </main>
   )
