@@ -5,55 +5,6 @@ import WorldMap from '@/components/WorldMap'
 export default function Home() {
   return (
     <main>
-      {/* HERO — fixed banner height */}
-      <section className="relative w-full h-[300px] md:h-[400px] flex items-center justify-center text-center overflow-hidden">
-        {/* Background image */}
-        <Image
-          src="/hero.jpg"
-          alt="Street food at night with city lights"
-          fill
-          priority
-          className="object-cover"
-        />
-        {/* Soft overlay for text contrast */}
-        <div className="absolute inset-0 bg-black/35" />
-
-        {/* Foreground content (kept compact) */}
-        <div className="relative z-10 text-white px-4">
-          <div className="flex justify-center">
-            <Image
-              src="/avocado-plane.png"
-              alt="Vacation Avocation icon"
-              width={60}
-              height={60}
-              className="mb-3"
-            />
-          </div>
-
-          <h1 className="text-3xl md:text-4xl font-semibold leading-tight">
-            Food-first, joy-forward travel.
-          </h1>
-          <p className="mt-2 text-base md:text-lg opacity-90">
-            Tight itineraries, cheeky vibes, hidden eats — all killer, no filler.
-          </p>
-
-          <div className="mt-5 flex items-center justify-center gap-3">
-            <Link
-              href="/guides"
-              className="inline-flex px-4 py-2 rounded-lg bg-[#F47174] text-white font-semibold"
-            >
-              Discover Guides
-            </Link>
-            <Link
-              href="/guides"
-              className="inline-flex px-4 py-2 rounded-lg bg-white/90 text-slate-900 font-semibold"
-            >
-              Explore by Map
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* “Start with these” — placeholder cards (swap with real posts later) */}
       <section className="container mx-auto py-10">
         <h2 className="text-2xl font-semibold mb-4">Start with these</h2>
