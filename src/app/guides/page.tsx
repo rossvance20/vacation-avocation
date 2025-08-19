@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
+
 import GuidesClient from '@/components/GuidesClient'
+
 
 export const metadata: Metadata = {
   title: 'Travel Guides | Vacation Avocation',
@@ -29,9 +31,11 @@ export const metadata: Metadata = {
 
 export default function Guides() {
   return (
-    <main className="max-w-6xl mx-auto px-4 py-12">
+    <main className="max-w-6xl mx-auto px-4 py-12 space-y-8">
       <h1 className="text-3xl font-semibold mb-6">Guides</h1>
+
       <GuidesClient />
+
     </main>
   )
 }
