@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Poppins, Inter } from 'next/font/google'
+import Script from 'next/script'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BackToTop from '@/components/BackToTop'
@@ -18,29 +19,30 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
       <head>
-        {/* Start cookieyes banner */}
-        <script
+        <Script
           id="cookieyes"
-          type="text/javascript"
           src="https://cdn-cookieyes.com/client_data/c3a672b9a29c45937b557cd4/script.js"
+          strategy="beforeInteractive"
         />
-        {/* End cookieyes banner */}
-        {/* Google tag (gtag.js) */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-Z3CL1LXKEW"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Z3CL1LXKEW');
-        `,
-          }}
-        />
+        <Script id="consent-defaults" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              analytics_storage: 'denied',
+              ad_storage: 'denied',
+              ad_user_data: 'denied',
+              ad_personalization: 'denied'
+            });
+          `}
+        </Script>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-Z3CL1LXKEW" strategy="afterInteractive" />
+        <Script id="ga-init" strategy="afterInteractive">
+          {`
+            gtag('js', new Date());
+            gtag('config', 'G-Z3CL1LXKEW', { anonymize_ip: true });
+          `}
+        </Script>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="manifest" href="/manifest.webmanifest" />
         <meta name="theme-color" content="#6B8E23" />
