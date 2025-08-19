@@ -1,0 +1,20 @@
+:root {
+  --brand: #6B8E23;
+  --accent1: #A6D785;
+  --accent2: #8B5E3C;
+  --ink: #0B1220;
+  --paper: #F8FAFC;
+  --ring: var(--accent1);
+
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+
+  --font-heading: var(--font-poppins);
+  --font-body: var(--font-inter);
+}
