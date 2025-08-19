@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 
 type NavLink = {
   href?: string
@@ -21,26 +22,18 @@ const links: NavLink[] = [
       { href: '/destinations/south-america', label: 'South America' },
     ],
   },
-  { href: '/restaurants', label: 'Restaurants' },
-  {
-    label: 'Key Travel Resources',
-    children: [
-      { href: '/travel-resources', label: 'Travel Resources' },
-      { href: '/travel-reward-credit-cards', label: 'Travel Reward Credit Cards' },
-      { href: '/travel-gear', label: 'Travel Gear' },
-    ],
-  },
 ]
 
 export default function Header() {
   const [open, setOpen] = useState(false)
+  const pathname = usePathname()
   return (
     <header className="sticky top-0 z-50 bg-paper/80 backdrop-blur border-b border-slate-200">
       <div className="container flex items-center justify-between h-16">
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center focus-visible:ring-brand">
           <Image src="/logo-text.svg" alt="Vacation Avocation" width={200} height={50} priority />
         </Link>
-        <nav className="hidden md:flex items-center gap-6 font-heading text-sm">
+        <nav className="hidden md:flex items-center gap-6 font-heading text-sm" aria-label="Primary">
           {links.map((l) =>
             l.children ? (
               <div key={l.label} className="relative group">
@@ -51,7 +44,10 @@ export default function Header() {
                       <li key={c.href}>
                         <Link
                           href={c.href!}
-                          className="block px-4 py-2 whitespace-nowrap hover:bg-paper/50 hover:text-brand"
+                          className={`block px-4 py-2 whitespace-nowrap hover:bg-paper/50 hover:text-brand ${
+                            pathname === c.href ? 'text-brand font-semibold' : ''
+                          }`}
+                          aria-current={pathname === c.href ? 'page' : undefined}
                         >
                           {c.label}
                         </Link>
@@ -61,7 +57,12 @@ export default function Header() {
                 </div>
               </div>
             ) : (
-              <Link key={l.href} href={l.href!} className="hover:text-brand">
+              <Link
+                key={l.href}
+                href={l.href!}
+                className={`${pathname === l.href ? 'text-brand font-semibold' : 'hover:text-brand'}`}
+                aria-current={pathname === l.href ? 'page' : undefined}
+              >
                 {l.label}
               </Link>
             )
@@ -85,23 +86,37 @@ export default function Header() {
         </nav>
         <button
           className="md:hidden p-2"
-          aria-label="Toggle menu"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
           onClick={() => setOpen(!open)}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 5.25h16.5M3.75 12h16.5M3.75 18.75h16.5" />
-          </svg>
+          {open ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              className="w-6 h-6"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 5.25h16.5M3.75 12h16.5M3.75 18.75h16.5" />
+            </svg>
+          )}
         </button>
       </div>
       {open && (
-        <nav className="md:hidden border-t border-slate-200 bg-paper">
+        <nav className="md:hidden border-t border-slate-200 bg-paper" aria-label="Mobile">
           <ul className="flex flex-col px-4 py-4 space-y-4">
             {links.map((l) => (
               <li key={l.label}>

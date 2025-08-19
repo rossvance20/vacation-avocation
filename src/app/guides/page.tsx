@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import FiltersClient from '@/components/FiltersClient'
+import NewsletterForm from '@/components/NewsletterForm'
 
 export const metadata: Metadata = {
   title: 'Travel Guides | Vacation Avocation',
@@ -40,7 +41,7 @@ const continents = [
 
 export default function Guides() {
   return (
-    <main className="max-w-6xl mx-auto px-4 py-12">
+    <main className="max-w-6xl mx-auto px-4 py-12 space-y-8">
       <h1 className="text-3xl font-semibold mb-6">Guides</h1>
       <FiltersClient />
       <div className="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
@@ -65,6 +66,10 @@ export default function Guides() {
           )
         )}
       </div>
+      <section className="bg-accent2/20 py-8 rounded-xl2 text-center">
+        <h2 className="text-2xl font-heading mb-4">Get fresh guides in your inbox</h2>
+        <NewsletterForm />
+      </section>
     </main>
   )
 }

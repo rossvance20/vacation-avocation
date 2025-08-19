@@ -1,27 +1,27 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import NewsletterForm from '@/components/NewsletterForm'
 
 const links = [
   { href: '/about', label: 'About Us' },
-  { href: '/destinations', label: 'Destinations' },
-  { href: '/restaurants', label: 'Restaurants' },
-  { href: '/travel-resources', label: 'Travel Resources' },
-  { href: '/travel-reward-credit-cards', label: 'Travel Reward Credit Cards' },
-  { href: '/travel-gear', label: 'Travel Gear' },
+  { href: '/privacy', label: 'Privacy' },
+  { href: '/sitemap.xml', label: 'Sitemap' },
+  { href: 'mailto:support@vacationavocation.com', label: 'Contact' },
 ]
 
 export default function Footer() {
   return (
     <footer className="mt-24 bg-ink text-paper">
       <div className="container py-16 space-y-6 text-center">
-          <Image src="/logo.svg" alt="Avocado plane icon" width={100} height={50} className="mx-auto rotate-6" />
+        <Image src="/logo.svg" alt="Avocado plane icon" width={100} height={50} className="mx-auto rotate-6" />
         <p className="text-lg font-heading">Fun food & travel guides.</p>
         <p className="max-w-prose mx-auto text-sm">
           Vacation Avocation helps you find the tastiest bites and brightest trips. Follow along for cheeky itineraries and bold flavours.
         </p>
-        <nav className="flex flex-wrap justify-center gap-4 text-sm">
+        <NewsletterForm />
+        <nav className="flex flex-wrap justify-center gap-4 text-sm" aria-label="Footer">
           {links.map((l) => (
-            <Link key={l.href} href={l.href} className="hover:underline">
+            <Link key={l.href} href={l.href} className="hover:underline focus-visible:ring-brand">
               {l.label}
             </Link>
           ))}
@@ -37,10 +37,7 @@ export default function Footer() {
             </svg>
           </a>
         </div>
-        <p className="text-xs opacity-80">
-          © {new Date().getFullYear()} Vacation Avocation · <Link href="/privacy" className="underline">Privacy</Link> ·{' '}
-          <Link href="/sitemap.xml" className="underline">Sitemap</Link>
-        </p>
+        <p className="text-xs opacity-80">© {new Date().getFullYear()} Vacation Avocation</p>
       </div>
     </footer>
   )
