@@ -1,4 +1,5 @@
 import Gallery from '@/components/Gallery'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = { title: 'Tokyo Adventure Guide - Vacation Avocation' }
@@ -16,6 +17,7 @@ export default function TokyoAdventure() {
   ]
   return (
     <main className="container py-12 prose">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Guides', href: '/guides' }, { label: 'Tokyo Adventure Guide' }]} />
       <h1>Tokyo Adventure Guide</h1>
       <p>High-tech thrills and hidden temples.</p>
       <Gallery images={images} />

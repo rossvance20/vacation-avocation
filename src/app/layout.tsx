@@ -4,6 +4,7 @@ import { Poppins, Inter } from 'next/font/google'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BackToTop from '@/components/BackToTop'
+import PWA from '@/components/PWA'
 
 const poppins = Poppins({ subsets: ['latin'], weight: ['600','700'], variable: '--font-poppins', display: 'swap' })
 const inter = Inter({ subsets: ['latin'], weight: ['400'], variable: '--font-inter', display: 'swap' })
@@ -18,11 +19,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
       <head>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="manifest" href="/manifest.webmanifest" />
+        <meta name="theme-color" content="#6B8E23" />
       </head>
       <body className="min-h-screen">
         <Header />
         {children}
         <BackToTop />
+        <PWA />
         <Footer />
         <script
           type="application/ld+json"

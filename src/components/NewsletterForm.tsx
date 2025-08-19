@@ -46,7 +46,7 @@ export default function NewsletterForm() {
       />
       <button
         type="submit"
-        className="px-6 py-3 rounded-xl bg-brand text-white font-semibold hover:bg-brand/90 focus-visible:ring-brand"
+        className="btn bg-brand text-white font-semibold rounded-xl"
       >
         Join Free
       </button>

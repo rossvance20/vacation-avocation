@@ -1,0 +1,11 @@
+{
+  "name": "Vacation Avocation",
+  "short_name": "VA",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8FAFC",
+  "theme_color": "#6B8E23",
+  "icons": [
+    { "src": "/logo.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

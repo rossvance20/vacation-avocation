@@ -18,3 +18,13 @@
   --font-heading: var(--font-poppins);
   --font-body: var(--font-inter);
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --brand: #A6D785;
+    --accent1: #6B8E23;
+    --accent2: #A06B4C;
+    --ink: #F8FAFC;
+    --paper: #0B1220;
+  }
+}
