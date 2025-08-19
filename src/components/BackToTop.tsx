@@ -11,8 +11,12 @@ export default function BackToTop(){
   return (
     <button
       type="button"
-      onClick={()=>window.scrollTo({top:0,behavior:'smooth'})}
-      className={`fixed bottom-4 right-4 z-50 p-3 rounded-full bg-brand text-white shadow transition-opacity focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand ${visible?'opacity-100':'opacity-0 pointer-events-none'}`}
+      aria-label="Back to top"
+      onClick={()=>{
+        const prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        window.scrollTo({top:0,behavior:prefersReduced?'auto':'smooth'})
+      }}
+      className={`btn to-top fixed bottom-4 right-4 z-50 rounded-full bg-brand text-white shadow transition-opacity ${visible?'opacity-100':'opacity-0 pointer-events-none'} w-11 h-11 p-0`}
       aria-hidden={!visible}
       tabIndex={visible?0:-1}
     >
