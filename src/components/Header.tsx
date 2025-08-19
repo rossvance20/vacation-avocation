@@ -31,7 +31,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-paper/80 backdrop-blur border-b border-slate-200">
       <div className="container flex items-center justify-between h-16">
         <Link href="/" className="flex items-center focus-visible:ring-brand">
-          <Image src="/logo-text.svg" alt="Vacation Avocation" width={160} height={40} priority />
+          <Image src="/logo-text.svg" alt="Vacation Avocation" width={80} height={20} priority />
         </Link>
         <nav className="hidden md:flex items-center gap-6 font-heading text-sm" aria-label="Primary">
           {links.map((l) =>
