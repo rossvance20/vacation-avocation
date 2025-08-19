@@ -36,7 +36,7 @@ export default function Home() {
   const featured = posts.slice(0, 6)
   return (
     <main>
-      <section className="relative h-[45vh] md:h-[60vh]">
+      <section className="relative h-[45vh] md:h-[60vh] mt-12">
         <Image src="/home-hero.svg" alt="Cliffside illustration" fill className="object-cover" priority />
         <div className="absolute inset-0 bg-ink/40" />
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-paper space-y-4 px-4">
