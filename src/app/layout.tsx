@@ -18,6 +18,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
       <head>
+        {/* Start cookieyes banner */}
+        <script
+          id="cookieyes"
+          type="text/javascript"
+          src="https://cdn-cookieyes.com/client_data/c3a672b9a29c45937b557cd4/script.js"
+        />
+        {/* End cookieyes banner */}
         {/* Google tag (gtag.js) */}
         <script
           async
