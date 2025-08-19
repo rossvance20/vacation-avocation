@@ -1,32 +1,31 @@
 import type { MetadataRoute } from 'next';
-import { readdirSync, existsSync } from 'fs';
-import path from 'path';
 
 const continents = ['africa', 'asia', 'europe', 'north-america', 'south-america'];
 
+const pages = [
+  '',
+  'about',
+  'blog',
+  'contact',
+  'destinations',
+  'guides',
+  'restaurants',
+  'search',
+  'shop',
+  'subscribe',
+  'travel-gear',
+  'travel-resources',
+  'travel-reward-credit-cards',
+  'work',
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.vacationavocation.com';
 
-  const appDir = path.join(process.cwd(), 'src/app');
-  const entries = readdirSync(appDir, { withFileTypes: true });
-
-  const routes: string[] = [''];
-
-  for (const entry of entries) {
-    if (
-      entry.isDirectory() &&
-      !entry.name.startsWith('(') &&
-      !entry.name.startsWith('_') &&
-      entry.name !== 'api'
-    ) {
-      const pagePath = path.join(appDir, entry.name, 'page.tsx');
-      if (existsSync(pagePath)) {
-        routes.push(`/${entry.name}`);
-      }
-    }
-  }
-
-  continents.forEach((c) => routes.push(`/guides/${c}`));
+  const routes = [
+    ...pages.map((page) => (page ? `/${page}` : '')),
+    ...continents.map((c) => `/guides/${c}`),
+  ];
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,
