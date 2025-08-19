@@ -6,6 +6,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BackToTop from '@/components/BackToTop'
 import PWA from '@/components/PWA'
+import ChunkErrorReload from '@/components/ChunkErrorReload'
 
 const poppins = Poppins({ subsets: ['latin'], weight: ['600','700'], variable: '--font-poppins', display: 'swap' })
 const inter = Inter({ subsets: ['latin'], weight: ['400'], variable: '--font-inter', display: 'swap' })
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <BackToTop />
         <PWA />
+        <ChunkErrorReload />
         <Footer />
         <script
           type="application/ld+json"
