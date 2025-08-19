@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Poppins, Inter } from 'next/font/google'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import BackToTop from '@/components/BackToTop'
 
 const poppins = Poppins({ subsets: ['latin'], weight: ['600','700'], variable: '--font-poppins', display: 'swap' })
 const inter = Inter({ subsets: ['latin'], weight: ['400'], variable: '--font-inter', display: 'swap' })
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen">
         <Header />
         {children}
+        <BackToTop />
         <Footer />
         <script
           type="application/ld+json"

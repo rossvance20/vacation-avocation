@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Weekend in New York",
+    "excerpt": "A quick guide to the Big Apple.",
+    "continent": "North America",
+    "country": "USA",
+    "city": "New York",
+    "url": "/guides/new-york-weekend",
+    "themes": ["City Break", "Food"],
+    "length": "Weekend",
+    "season": ["Spring", "Autumn"],
+    "updated": "2024-01-01",
+    "latitude": 40.7128,
+    "longitude": -74.0060,
+    "image": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "title": "Paris Food Guide",
+    "excerpt": "Bistros and bakeries in the City of Light.",
+    "continent": "Europe",
+    "country": "France",
+    "city": "Paris",
+    "url": "/guides/paris-food",
+    "themes": ["Food"],
+    "length": "1 Week",
+    "season": ["Spring", "Summer"],
+    "updated": "2024-02-01",
+    "latitude": 48.8566,
+    "longitude": 2.3522,
+    "image": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "title": "Tokyo Adventure Guide",
+    "excerpt": "High-tech thrills and hidden temples.",
+    "continent": "Asia",
+    "country": "Japan",
+    "city": "Tokyo",
+    "url": "/guides/tokyo-adventure",
+    "themes": ["Adventure", "City Break"],
+    "length": "1 Week",
+    "season": ["Autumn"],
+    "updated": "2024-03-01",
+    "latitude": 35.6762,
+    "longitude": 139.6503,
+    "image": "https://images.unsplash.com/photo-1568084205274-00e5c1d52cc7?auto=format&fit=crop&w=800&q=80"
+  }
+]
