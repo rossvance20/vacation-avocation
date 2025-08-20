@@ -8,3 +8,14 @@
 
 ## Newsletter signup
 Mailchimp form settings live in `src/components/NewsletterForm.tsx`. Paste your Mailchimp action URL and any hidden inputs into that component.
+
+## Sanity search
+Create a `.env` file with your Sanity project details:
+
+```
+SANITY_PROJECT_ID=eavsbcly
+SANITY_DATASET=production
+SANITY_API_VERSION=2023-10-01
+```
+
+These variables allow the search page to query live content from Sanity.
