@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 }
 
 export default function Home() {
-  const featured = posts.slice(0, 6)
+  const featured = posts.filter((p) => p.title === 'Pophams London Fields')
   return (
     <main>
       <section className="relative h-[45vh] md:h-[60vh] mt-2">
@@ -44,13 +44,16 @@ export default function Home() {
           <Image src="/logo-text.svg" alt="Vacation Avocation" width={240} height={60} className="-rotate-6" />
           <h1 className="sr-only">Vacation Avocation</h1>
 
-          <p className="text-lg md:text-xl">Fun food & travel guides.</p>
+          <p className="text-lg md:text-xl">Food, Fun & Travel</p>
           <div className="flex gap-4 flex-wrap justify-center">
             <Link href="/guides/london-48h" className="px-6 py-3 rounded-xl bg-brand text-white font-semibold hover:bg-brand/90">
               Start with London
             </Link>
-            <Link href="/guides" className="px-6 py-3 rounded-xl bg-accent1 text-white font-semibold hover:bg-accent1/90">
-              All Guides
+            <Link
+              href="/holiday-guides"
+              className="px-6 py-3 rounded-xl bg-accent1 text-white font-semibold hover:bg-accent1/90"
+            >
+              Holiday Guides
             </Link>
           </div>
         </div>

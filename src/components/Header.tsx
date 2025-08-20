@@ -13,15 +13,9 @@ type NavLink = {
 
 const links: NavLink[] = [
   { href: '/about', label: 'About Us' },
-  {
-    label: 'Destinations',
-    children: [
-      { href: '/destinations/africa', label: 'Africa' },
-      { href: '/destinations/asia', label: 'Asia' },
-      { href: '/destinations/north-america', label: 'North America' },
-      { href: '/destinations/south-america', label: 'South America' },
-    ],
-  },
+  { href: '/london-restaurant-guide', label: 'London Restaurant Guide' },
+  { href: '/holiday-guides', label: 'Holiday Guides' },
+  { href: '/contact', label: 'Contact Us' },
 ]
 
 export default function Header() {
@@ -34,39 +28,31 @@ export default function Header() {
           <Image src="/logo-text.svg" alt="Vacation Avocation" width={74} height={18} priority />
         </Link>
         <nav className="hidden md:flex items-center gap-6 font-heading text-sm" aria-label="Primary">
-          {links.map((l) =>
-            l.children ? (
-              <div key={l.label} className="relative group">
-                <span className="hover:text-brand cursor-pointer">{l.label}</span>
-                <div className="absolute left-0 top-full hidden group-hover:block bg-paper border border-slate-200 rounded shadow-card">
-                  <ul className="py-2">
-                    {l.children.map((c) => (
-                      <li key={c.href}>
-                        <Link
-                          href={c.href!}
-                          className={`block px-4 py-2 whitespace-nowrap hover:bg-paper/50 hover:text-brand ${
-                            pathname === c.href ? 'text-brand font-semibold' : ''
-                          }`}
-                          aria-current={pathname === c.href ? 'page' : undefined}
-                        >
-                          {c.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ) : (
-              <Link
-                key={l.href}
-                href={l.href!}
-                className={`${pathname === l.href ? 'text-brand font-semibold' : 'hover:text-brand'}`}
-                aria-current={pathname === l.href ? 'page' : undefined}
-              >
-                {l.label}
-              </Link>
-            )
-          )}
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href!}
+              className={`${pathname === l.href ? 'text-brand font-semibold' : 'hover:text-brand'}`}
+              aria-current={pathname === l.href ? 'page' : undefined}
+            >
+              {l.label}
+            </Link>
+          ))}
+          <a
+            href="https://www.instagram.com/vacationavocation/"
+            aria-label="Instagram"
+            className="hover:text-brand"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M7.001 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5.001 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7.001zm0 2h10c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3h-10C5.346 20 4 18.654 4 17V7c0-1.654 1.346-3 3.001-3zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm5.5-2a1.5 1.5 0 11-.001 3.001A1.5 1.5 0 0117.5 7z" />
+            </svg>
+          </a>
           <Link href="/search" aria-label="Search" className="hover:text-brand">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -120,34 +106,34 @@ export default function Header() {
           <ul className="flex flex-col px-4 py-4 space-y-4">
             {links.map((l) => (
               <li key={l.label}>
-                {l.children ? (
-                  <>
-                    <span className="block font-semibold">{l.label}</span>
-                    <ul className="pl-4 mt-2 space-y-2">
-                      {l.children.map((c) => (
-                        <li key={c.href}>
-                          <Link
-                            href={c.href!}
-                            className="block hover:text-brand"
-                            onClick={() => setOpen(false)}
-                          >
-                            {c.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </>
-                ) : (
-                  <Link
-                    href={l.href!}
-                    className="block hover:text-brand"
-                    onClick={() => setOpen(false)}
-                  >
-                    {l.label}
-                  </Link>
-                )}
+                <Link
+                  href={l.href!}
+                  className="block hover:text-brand"
+                  onClick={() => setOpen(false)}
+                >
+                  {l.label}
+                </Link>
               </li>
             ))}
+            <li>
+              <a
+                href="https://www.instagram.com/vacationavocation/"
+                aria-label="Instagram"
+                className="block hover:text-brand"
+                onClick={() => setOpen(false)}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  className="mx-auto"
+                >
+                  <path d="M7.001 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5.001 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7.001zm0 2h10c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3h-10C5.346 20 4 18.654 4 17V7c0-1.654 1.346-3 3.001-3zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm5.5-2a1.5 1.5 0 11-.001 3.001A1.5 1.5 0 0117.5 7z" />
+                </svg>
+              </a>
+            </li>
             <li>
               <Link
                 href="/search"
