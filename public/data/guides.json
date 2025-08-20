@@ -15,6 +15,21 @@
     "image": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80"
   },
   {
+    "title": "48 Hours in London (Food Edition)",
+    "excerpt": "Eat your way through the capital with our top picks.",
+    "continent": "Europe",
+    "country": "United Kingdom",
+    "city": "London",
+    "url": "/guides/london-48h",
+    "themes": ["Food"],
+    "length": "Weekend",
+    "season": ["Spring", "Autumn"],
+    "updated": "2024-04-01",
+    "latitude": 51.5072,
+    "longitude": -0.1276,
+    "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80"
+  },
+  {
     "title": "Paris Food Guide",
     "excerpt": "Bistros and bakeries in the City of Light.",
     "continent": "Europe",

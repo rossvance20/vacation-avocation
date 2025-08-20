@@ -46,7 +46,7 @@ export default function Home() {
 
           <p className="text-lg md:text-xl">Fun food & travel guides.</p>
           <div className="flex gap-4 flex-wrap justify-center">
-            <Link href="/london" className="px-6 py-3 rounded-xl bg-brand text-white font-semibold hover:bg-brand/90">
+            <Link href="/guides/london-48h" className="px-6 py-3 rounded-xl bg-brand text-white font-semibold hover:bg-brand/90">
               Start with London
             </Link>
             <Link href="/guides" className="px-6 py-3 rounded-xl bg-accent1 text-white font-semibold hover:bg-accent1/90">

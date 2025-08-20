@@ -1,6 +1,5 @@
-import type { MetadataRoute } from 'next';
-
-const continents = ['africa', 'asia', 'europe', 'north-america', 'south-america'];
+import type { MetadataRoute } from 'next'
+import { guides, getContinents, getCountries, slugify } from '@/lib/guides'
 
 const pages = [
   '',
@@ -9,6 +8,7 @@ const pages = [
   'contact',
   'destinations',
   'guides',
+  'privacy',
   'restaurants',
   'search',
   'shop',
@@ -17,19 +17,27 @@ const pages = [
   'travel-resources',
   'travel-reward-credit-cards',
   'work',
-];
+]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.vacationavocation.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.vacationavocation.com'
 
   const routes = [
     ...pages.map((page) => (page ? `/${page}` : '')),
-    ...continents.map((c) => `/guides/${c}`),
-  ];
+    ...guides.map((g) => g.url),
+  ]
+
+  getContinents().forEach((continent) => {
+    const cSlug = slugify(continent)
+    routes.push(`/destinations/${cSlug}`)
+    getCountries(continent).forEach((country) => {
+      routes.push(`/destinations/${cSlug}/${slugify(country)}`)
+    })
+  })
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
-  }));
+  }))
 }
 
