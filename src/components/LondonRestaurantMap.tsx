@@ -7,7 +7,9 @@ export default function LondonRestaurantMap(){
   const mapEl = useRef<HTMLDivElement>(null)
   const mapRef = useRef<any>(null)
   const markerRef = useRef<any>(null)
-  const closeTimeout = useRef<number | null>(null)
+
+  const closeTimeout = useRef<number>()
+
 
   useEffect(() => {
     const el = mapEl.current
