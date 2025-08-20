@@ -6,11 +6,11 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Travel Guides | Vacation Avocation',
-  description: 'Browse playful, practical travel guides by continent.',
+  description: 'Browse playful, practical travel guides.',
   alternates: { canonical: 'https://vacationavocation.com/guides' },
   openGraph: {
     title: 'Travel Guides | Vacation Avocation',
-    description: 'Browse playful, practical travel guides by continent.',
+    description: 'Browse playful, practical travel guides.',
     url: 'https://vacationavocation.com/guides',
     siteName: 'Vacation Avocation',
     images: [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Travel Guides | Vacation Avocation',
-    description: 'Browse playful, practical travel guides by continent.',
+    description: 'Browse playful, practical travel guides.',
     images: ['https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80'],
   },
 }
