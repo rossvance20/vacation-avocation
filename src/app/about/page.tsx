@@ -5,18 +5,24 @@ export default function About() {
     <main className="max-w-3xl mx-auto px-4 py-12 prose">
       <h1 className="flex items-center gap-2">
         About Vacation Avocation
-          <Image src="/logo.svg" alt="Avocado plane icon" width={50} height={25} className="-rotate-12" />
+        <Image src="/logo.svg" alt="Avocado plane icon" width={50} height={25} className="-rotate-12" />
       </h1>
       <p>
-        We believe travel should be fun, a little cheeky, and always memorable. Combining a love for food and wanderlust, we
-        guide you through vibrant cities and peaceful escapes.
+        London shifts constantly. A restaurant can be full one month and forgotten the next.
       </p>
-      <h2>What you’ll find here</h2>
-      <ul>
-        <li>Food-first guides</li>
-        <li>Itineraries you can actually follow</li>
-        <li>Hidden spots and honest reviews</li>
-      </ul>
+      <p>
+        Vacation Avocation exists to record what lasts and what doesn’t. We visit quietly, pay every bill, and judge by the same standards each time.
+      </p>
+      <p>
+        No gifts. No special access. Just the same experience anyone else would have.
+      </p>
+      <p>
+        Our rankings change because quality changes. When places improve, they rise. When they fall short, they drop.
+      </p>
+      <p>
+        This approach is slower, harder, and costlier than taking handouts. But it’s also the only way to create reviews that stand up to scrutiny — and that readers can genuinely trust.
+      </p>
     </main>
   )
 }
+
