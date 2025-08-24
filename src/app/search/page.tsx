@@ -17,6 +17,7 @@ export default async function SearchPage({ searchParams }: { searchParams: Searc
   let results: SearchResult[] = []
 
   if (sanity && q) {
+
     results = await sanity.fetch<SearchResult[]>(
       `*[_type == "post" && title match $q]{ _id, title, "slug": slug.current, excerpt }`,
       { q: `${q}*` }
