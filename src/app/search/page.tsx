@@ -13,6 +13,14 @@ type SearchResult = {
 }
 
 export default async function SearchPage({ searchParams }: { searchParams: SearchParams }) {
+  if (!sanity) {
+    return (
+      <main className="max-w-6xl mx-auto px-4 py-12">
+        <h1 className="text-3xl font-semibold mb-6">Search</h1>
+        <p className="opacity-70">Search is currently unavailable.</p>
+      </main>
+    )
+  }
   const q = searchParams.q ?? ''
   let results: SearchResult[] = []
 
