@@ -1,10 +1,9 @@
 import { createClient, type SanityClient } from '@sanity/client'
 
-const projectId = process.env.SANITY_PROJECT_ID
-
-export const sanity: SanityClient | null = projectId
+export const sanity: SanityClient | null = process.env.SANITY_PROJECT_ID
   ? createClient({
-      projectId,
+      projectId: process.env.SANITY_PROJECT_ID!,
+
       dataset: process.env.SANITY_DATASET || 'production',
       apiVersion: process.env.SANITY_API_VERSION || '2023-10-01',
       useCdn: true,
