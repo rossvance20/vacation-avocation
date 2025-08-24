@@ -44,10 +44,7 @@ export default function Footer() {
             ),
           )}
         </nav>
-        <p className="text-xs">Vacation Avocation LLC · 123 Demo Street · London, UK · support@vacationavocation.com</p>
-        <p className="text-xs opacity-80">
-          This site uses affiliate links; we may earn a commission at no extra cost to you.
-        </p>
+        <p className="text-xs">Vacation Avocation · London, UK · support@vacationavocation.com</p>
         <div className="flex justify-center gap-6">
           <a
             href="https://www.instagram.com/vacationavocation/"

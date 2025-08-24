@@ -28,7 +28,7 @@ export default function Privacy() {
       </p>
       <h2>Contact</h2>
       <p>
-        Vacation Avocation LLC<br />123 Demo Street<br />London, UK<br />
+        Vacation Avocation<br />London, UK<br />
         <a href="mailto:support@vacationavocation.com">support@vacationavocation.com</a>
       </p>
     </main>

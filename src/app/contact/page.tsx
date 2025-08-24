@@ -23,8 +23,7 @@ export default function Contact() {
       </form>
       <p className="text-sm opacity-70 mt-3">Replace <code>your-form-id</code> with your Formspree ID later.</p>
       <div className="mt-8 text-sm">
-        <p>Vacation Avocation LLC</p>
-        <p>123 Demo Street</p>
+        <p>Vacation Avocation</p>
         <p>London, UK</p>
       </div>
     </main>
