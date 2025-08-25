@@ -54,7 +54,7 @@ export default function CookieConsent() {
   if (!open) return null
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 bg-ink text-paper p-4 text-sm shadow-md">
+    <div className="fixed inset-x-0 bottom-0 z-50 bg-ink text-paper p-4 pb-[calc(env(safe-area-inset-bottom)+1rem)] text-sm shadow-md">
       {showSettings ? (
         <div className="space-y-3">
           <p className="font-semibold">Cookie preferences</p>
