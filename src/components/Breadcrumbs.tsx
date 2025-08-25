@@ -24,7 +24,7 @@ export default function Breadcrumbs({ items }: { items: Crumb[] }) {
           {items.map((item, i) => (
             <li key={i} className="flex items-center gap-2">
               {item.href ? (
-                <Link href={item.href} className="text-brand hover:underline">
+                <Link href={item.href} className="text-brand hover:underline focus-visible:underline">
                   {item.label}
                 </Link>
               ) : (
