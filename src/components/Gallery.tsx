@@ -55,7 +55,7 @@ export default function Gallery({ images }:{ images:{src:string,alt:string}[] })
           <button ref={prevRef} onClick={prev} aria-label="Previous" className="absolute left-4 w-12 h-12 bg-white rounded-full flex items-center justify-center">
             ←
           </button>
-          <Image src={images[index].src} alt={images[index].alt} width={800} height={600} className="max-h-[80vh] object-contain" />
+          <Image src={images[index].src} alt={images[index].alt} width={800} height={600} className="max-h-[80svh] object-contain" />
           <button ref={nextRef} onClick={next} aria-label="Next" className="absolute right-4 w-12 h-12 bg-white rounded-full flex items-center justify-center">
             →
           </button>
