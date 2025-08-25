@@ -10,7 +10,6 @@ const links: LinkItem[] = [
   { href: '/privacy', label: 'Privacy' },
   { href: '/terms', label: 'Terms of Service' },
   { href: '/cookies', label: 'Cookie Policy' },
-  { href: '/do-not-sell', label: 'Do Not Sell My Data' },
   { href: '/sitemap.xml', label: 'Sitemap' },
   { href: 'mailto:support@vacationavocation.com', label: 'Contact' },
   { href: '#', label: 'Cookie Settings', onClick: () => window.showCookieConsent() },
