@@ -16,7 +16,7 @@ export default function BackToTop(){
         const prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches
         window.scrollTo({top:0,behavior:prefersReduced?'auto':'smooth'})
       }}
-      className={`btn to-top fixed bottom-4 right-4 z-50 rounded-full bg-brand text-white shadow transition-opacity ${visible?'opacity-100':'opacity-0 pointer-events-none'} w-11 h-11 p-0`}
+        className={`btn to-top fixed bottom-[calc(env(safe-area-inset-bottom)+1rem)] right-4 z-50 rounded-full bg-brand text-white shadow transition-opacity ${visible?'opacity-100':'opacity-0 pointer-events-none'} w-11 h-11 p-0`}
       aria-hidden={!visible}
       tabIndex={visible?0:-1}
     >
