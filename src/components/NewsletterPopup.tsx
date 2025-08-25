@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 export default function NewsletterPopup(){
   const [open, setOpen] = useState(false)
   useEffect(()=>{
-    function onScroll(){ const scrolled=window.scrollY+window.innerHeight; const half=document.body.scrollHeight*0.5; if(scrolled>=half){ setOpen(true); window.removeEventListener('scroll', onScroll) } }
+      function onScroll(){ const viewport=window.visualViewport?window.visualViewport.height:document.documentElement.clientHeight; const scrolled=window.scrollY+viewport; const half=document.documentElement.scrollHeight*0.5; if(scrolled>=half){ setOpen(true); window.removeEventListener('scroll', onScroll) } }
     window.addEventListener('scroll', onScroll); return ()=>window.removeEventListener('scroll', onScroll)
   },[])
   if(!open) return null
