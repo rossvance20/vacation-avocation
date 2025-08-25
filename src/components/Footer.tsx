@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import NewsletterForm from '@/components/NewsletterForm'
 
 type LinkItem = { href: string; label: string; onClick?: () => void }
 
@@ -23,10 +22,7 @@ export default function Footer() {
       <div className="container py-16 space-y-6 text-center">
         <Image src="/logo.svg" alt="Avocado plane icon" width={100} height={50} className="mx-auto rotate-6" />
         <p className="text-lg font-heading">Fun food & travel guides.</p>
-        <p className="max-w-prose mx-auto text-sm">
-          Vacation Avocation helps you find the tastiest bites and brightest trips. Follow along for cheeky itineraries and bold flavours.
-        </p>
-        <NewsletterForm />
+
         <nav className="flex flex-wrap justify-center gap-4 text-sm" aria-label="Footer">
           {links.map((l) =>
             l.onClick ? (
