@@ -14,6 +14,9 @@ const inter = Inter({ subsets: ['latin'], weight: ['400'], variable: '--font-int
 export const metadata: Metadata = {
   title: 'Vacation Avocation — Fun Food & Travel Guides',
   description: 'Playful, practical travel & restaurant guides with a fun, bold vibe.',
+  icons: {
+    icon: '/logo.svg',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
