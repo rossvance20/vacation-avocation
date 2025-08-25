@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react'
 import Filters, { FiltersState } from './Filters'
 import GuideCard from './GuideCard'
-import GuidesMap from './GuidesMap'
 import { usePathname, useRouter } from 'next/navigation'
 
 type Guide = {
@@ -62,7 +61,6 @@ export default function GuidesClient(){
           <GuideCard key={g.url} image={g.image} tag={g.continent} title={g.title} excerpt={g.excerpt} href={g.url} />
         ))}
       </div>
-      <GuidesMap guides={filtered} />
     </>
   )
 }
