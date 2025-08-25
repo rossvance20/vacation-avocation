@@ -78,7 +78,7 @@ export default function Home() {
         <div className="container space-y-4 text-center">
           <h2 className="text-2xl font-heading flex items-center justify-center gap-2">
             <Image src="/logo.svg" alt="Avocado plane icon" width={40} height={20} className="-rotate-12" />
-            Get fresh guides in your inbox
+            Don’t Miss Our Latest Reviews
             <Image src="/logo.svg" alt="Avocado plane icon" width={40} height={20} className="rotate-12" />
           </h2>
           <NewsletterForm />
