@@ -13,14 +13,14 @@ export default function GuideCard({ image, tag, title, excerpt, href }: GuideCar
   return (
     <Link
       href={href}
-      className="group rounded-2xl overflow-hidden border border-slate-200 hover:shadow-card transition block bg-paper"
+      className="group rounded-2xl overflow-hidden border border-slate-200 hover:shadow-card active:shadow-card focus-visible:shadow-card transition block bg-paper"
     >
       <div className="relative aspect-[16/9]">
         <Image
           src={image}
           alt={title}
           fill
-          className="object-cover group-hover:scale-105 transition-transform"
+          className="object-cover group-hover:scale-105 group-focus-visible:scale-105 group-active:scale-105 transition-transform"
           sizes="(min-width:1024px) 400px, 100vw"
           loading="lazy"
         />

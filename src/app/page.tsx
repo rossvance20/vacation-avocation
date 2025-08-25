@@ -46,12 +46,12 @@ export default function Home() {
 
           <p className="text-lg md:text-xl">Food, Fun & Travel</p>
           <div className="flex gap-4 flex-wrap justify-center">
-            <Link href="/guides/london-48h" className="px-6 py-3 rounded-xl bg-brand text-white font-semibold hover:bg-brand/90">
+            <Link href="/guides/london-48h" className="px-6 py-3 rounded-xl bg-brand text-white font-semibold hover:bg-brand/90 focus:bg-brand/90 active:bg-brand/80">
               Start with London
             </Link>
             <Link
               href="/holiday-guides"
-              className="px-6 py-3 rounded-xl bg-accent1 text-white font-semibold hover:bg-accent1/90"
+              className="px-6 py-3 rounded-xl bg-accent1 text-white font-semibold hover:bg-accent1/90 focus:bg-accent1/90 active:bg-accent1/80"
             >
               Holiday Guides
             </Link>

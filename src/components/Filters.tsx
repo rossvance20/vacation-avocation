@@ -20,7 +20,7 @@ export default function Filters({ state, onChange }:{ state:FiltersState, onChan
         type="button"
         onClick={()=>setField(k,v)}
         aria-pressed={active}
-        className={`px-3 py-1.5 rounded-lg border focus-visible:outline focus-visible:outline-2 focus-visible:outline-coral ${active?'bg-coral text-white border-coral':'hover:border-coral'}`}
+        className={`px-3 py-1.5 rounded-lg border focus-visible:outline focus-visible:outline-2 focus-visible:outline-coral ${active?'bg-coral text-white border-coral':'hover:border-coral focus:border-coral active:border-coral'}`}
       >
         {v}
       </button>
