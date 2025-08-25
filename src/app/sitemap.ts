@@ -10,7 +10,6 @@ const pages = [
   'privacy',
   'terms',
   'cookies',
-  'do-not-sell',
   'london-restaurant-guide',
   'search',
   'shop',
